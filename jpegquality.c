@@ -237,12 +237,12 @@ int	ProcessJPEG	(FILE *Fin)
 	       Diff = Abs(QualityAvg[0]-QualityAvg[1]); */
 	    QualityF = (QualityAvg[0]+QualityAvg[1]+QualityAvg[2])/3.0 + Diff;
 	    QualityI = (QualityF+0.5); /* round quality to int */
+	    /* We assume high quality otherwise test it */
 	    if(QualityI < 90)
 	    {
-	       if(QualityI < 70)
-	          strcpy(QualityClass, "Poor");
-	       else if (QualityI < 80)
-	          strcpy(QualityClass, "Medium");
+	       strcpy(QualityClass, "Medium");  /* assume medium then */
+	       if(QualityI < 80)
+	          strcpy(QualityClass, "Poor");  /* oops, its Poor */
 	    }
 	    printf("Average quality: %5.2f%% (%d%%:%s)\n",QualityF,QualityI,
 	            QualityClass);
