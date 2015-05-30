@@ -9,6 +9,4 @@ $(EXE) : $(SRC)
 clean  :
 	$(RM) $(EXE) *~ *.dSYM/
 run : all
-	@./$(EXE)
-
-
+	@./$(EXE) $(JPEG)
