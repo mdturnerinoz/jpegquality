@@ -1,4 +1,3 @@
-# .gitignore statements
-#*~
-#**/*.dSYM/
-#jpegquality
+*~
+**/*.dSYM/
+jpegquality

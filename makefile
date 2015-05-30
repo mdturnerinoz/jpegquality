@@ -1,8 +1,8 @@
 # change CXX to CC for C and g++ to gcc
 CXXFLAGS := -g -O0
 CXX      := gcc
-SRC      := <jpegquality>.<c>
-EXE      := <jpegquality>
+SRC      := jpegquality.c
+EXE      := jpegquality
 RM       := rm -fr 
 all : $(EXE)
 $(EXE) : $(SRC)
