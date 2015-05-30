@@ -103,6 +103,7 @@ int	ProcessJPEG	(FILE *Fin)
   float Total;
   float TotalNum;
   int Precision,Index;
+  char QualityClass [10] = "High"; 
 
   /***
     JPEGs are in a fixed file format:
@@ -236,7 +237,15 @@ int	ProcessJPEG	(FILE *Fin)
 	       Diff = Abs(QualityAvg[0]-QualityAvg[1]); */
 	    QualityF = (QualityAvg[0]+QualityAvg[1]+QualityAvg[2])/3.0 + Diff;
 	    QualityI = (QualityF+0.5); /* round quality to int */
-	    printf("Average quality: %5.2f%% (%d%%)\n",QualityF,QualityI);
+	    if(QualityI < 90)
+	    {
+	       if(QualityI < 70)
+	          strcpy(QualityClass, "Poor");
+	       else if (QualityI < 80)
+	          strcpy(QualityClass, "Medium");
+	    }
+	    printf("Average quality: %5.2f%% (%d%%:%s)\n",QualityF,QualityI,
+	            QualityClass);
 	    } /* if all tables loaded */
 	  } /* for each set of 65 bytes */
     } /* while read file */
