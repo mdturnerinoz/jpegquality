@@ -41,12 +41,21 @@ The following is part of text extracted from the jpegquality.c comments at the t
     
 ## Building jpegquality 
 
-To build the code, simply execute make on the makefile in the working directly extracted from this repo.
+To build jpegquality, simply execute make on the makefile in the working directly extracted from this repo.
 <pre>
 make 
 </pre> 
 
 ## To run jpegquality, run it as follows:
+If int your $PATH somewhere:
 <pre>
 jpegaulity file.jpg [file.jpg file.jpg...]
+</pre> 
+OR if not in your $PATH, directly from where you installed it:
+<pre>
+./jpegaulity file.jpg [file.jpg file.jpg...]
+</pre> 
+Also note that with BASH or other such advanced shells, you can run it as follows to only access jpeg files
+<pre>
+jpegaulity \*.jp\*
 </pre> 
