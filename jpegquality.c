@@ -49,6 +49,7 @@
 int Debug=0;
 
 #define	Abs(x)	((x) < 0 ? -(x) : (x))
+#define VERSION "1.2"
 
 /***************************************************
  Usage(): Display program usage.
@@ -174,7 +175,7 @@ int	ProcessJPEG	(FILE *Fin)
 	}
 
     /* Process quantization tables */
-    printf("\nQuantization table\n");
+    printf("Quantization table\n");
 
     /** precision is specified by the higher four bits and index is
         specified by the lower four bits **/
@@ -258,6 +259,8 @@ int	main	(int argc, char *argv[])
   int c;
   FILE *Fin;
   int rc;
+  
+  printf("jpegquality version %s\n", VERSION);
 
   /* process command lines */
   /** Uh, imgana has command line options, but jpegquality does not **/
@@ -278,6 +281,8 @@ int	main	(int argc, char *argv[])
 	Usage(argv[0]);
 	exit(-1);
 	}
+	
+  printf("\n");
 
   for( ; optind < argc; optind++)
     {
@@ -292,5 +297,8 @@ int	main	(int argc, char *argv[])
     fclose(Fin);
     if (optind+1 < argc) printf("\n");
     }
+    
+  printf("\n");
+  
   return(0);
 } /* main() */
