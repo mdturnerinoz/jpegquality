@@ -56,7 +56,7 @@ int Debug=0;
  ***************************************************/
 void	Usage	(char *Name)
 {
-  fprintf(stderr,"Usage: %s file.jpg [file.jpg file.jpg...]\n",Name);
+  fprintf(stderr,"Usage: %s file.jpg [file.jpg file.jpg...]\n\n",Name);
 } /* Usage() */
 
 /***************************************************
@@ -260,7 +260,7 @@ int	main	(int argc, char *argv[])
   FILE *Fin;
   int rc;
   
-  printf("jpegquality version %s\n", VERSION);
+  printf("\njpegquality version %s\n", VERSION);
 
   /* process command lines */
   /** Uh, imgana has command line options, but jpegquality does not **/
