@@ -55,7 +55,7 @@ OR if not in your $PATH, directly from where you installed it:
 <pre>
 ./jpegaulity file.jpg [file.jpg file.jpg...]
 </pre> 
-Also note that with BASH or other such advanced shells, you can run it as follows to only access jpeg files
+Also note that with BASH or other such advanced shells, you can run it as follows to only access jpeg files in a given directory:
 <pre>
-jpegaulity \*.jp\*
+jpegaulity &#8727;.jp&#8727;
 </pre> 
